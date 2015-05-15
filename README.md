@@ -11,9 +11,33 @@ Install using [npm][npm-url].
 
 ## Usage
 
+### Full backward compatible
+```
+// import React from 'react';
+import React from 'reactx';
+
+// Existing code should work as before!
+```
+
 ### ReactX.Component
 
 React Component with Immutable style state
+
+#### initData
+
+TODO
+
+#### this.data
+
+TODO
+
+#### this.updateData
+
+TODO
+
+#### this.data.toJS()
+
+TODO
 
 ### Reactx.PropertyBinder
 
@@ -56,7 +80,7 @@ Binding store data to React Component as properties, and get updated with values
 ### shouldComponentUpdate
 ```jsx
 import React from 'react';
-import {shouldComponentUpdate} from 'reactx';
+import React, {shouldComponentUpdate} from 'reactx';
 
 class PureRenderComponent extends React.Component {
   constructor(props) {

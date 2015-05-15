@@ -30,7 +30,8 @@
     "babel-runtime": "^5.4.2",
     "immutable": "^3.7.2",
     "lodash": "^3.8.0",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-pure-render": "^1.0.1"
   },
   "devDependencies": {
     "approot": "^0.2.1",

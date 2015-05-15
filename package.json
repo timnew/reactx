@@ -1,0 +1,41 @@
+{
+  "name": "reactx",
+  "version": "0.1.0",
+  "description": "A React.js Extension Library, add missing features form React.js ",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timnew/reactx.git"
+  },
+  "keywords": [
+    "react",
+    "reactx",
+    "extension",
+    "property",
+    "binding",
+    "binder",
+    "component",
+    "high-order-component"
+  ],
+  "author": "timnew <timnew.wti@gmail.com> (http://timnew.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timnew/reactx/issues"
+  },
+  "homepage": "https://github.com/timnew/reactx#readme",
+  "dependencies": {
+    "babel-runtime": "^5.4.2",
+    "immutable": "^3.7.2",
+    "lodash": "^3.8.0",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel": "^5.4.2",
+    "chai": "^2.3.0",
+    "gulp": "^3.8.11",
+    "mocha": "^2.2.5"
+  }
+}

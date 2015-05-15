@@ -1,0 +1,8 @@
+--colors
+--growl
+--reporter spec
+--ui bdd
+--compilers cjsx:coffee-react/register,coffee:coffee-script/register
+--recursive
+--require specs/specHelper.js
+--harmony

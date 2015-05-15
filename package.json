@@ -4,7 +4,7 @@
   "description": "A React.js Extension Library, add missing features form React.js ",
   "main": "reactx.jsx",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --harmony --opts mocha.opts specs/**/*Spec.cjsx"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "react": "^0.13.3"
   },
   "devDependencies": {
+    "approot": "^0.2.1",
     "babel": "^5.4.2",
     "babel-eslint": "^3.1.1",
     "chai": "^2.3.0",

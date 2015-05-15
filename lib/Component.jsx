@@ -25,6 +25,13 @@ class Component extends React.Component {
       this.setState({ data: Immutable.fromJS(updates) });
     }
   }
+
+  createStateLink(field, onChangedCallback) {
+    return {
+      value: Array.isArray(field) ? this.data.getIn(field) : this.data.get(field),
+      requestChange: onChangedCallback
+    };
+  }
 }
 
 export default Component;

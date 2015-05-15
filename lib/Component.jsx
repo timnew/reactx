@@ -22,7 +22,7 @@ class Component extends React.Component {
         return { data: updates(prev.data, props) };
       });
     } else {
-      this.setState({ data: updates });
+      this.setState({ data: Immutable.fromJS(updates) });
     }
   }
 }

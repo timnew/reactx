@@ -18,7 +18,8 @@
     "binding",
     "binder",
     "component",
-    "high-order-component"
+    "high-order-component",
+    "react-component"
   ],
   "author": "timnew <timnew.wti@gmail.com> (http://timnew.me)",
   "license": "MIT",

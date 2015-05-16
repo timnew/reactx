@@ -41,7 +41,15 @@ class PropertyBinder extends Component {
  }
 
  registerListener(name, source) {
-   this.updateData(data => data.setIn(['listeners', name], source[this.props.listenerHook](this.onSourceChanged.bind(this, name))));
+   if(!this.props.listenerHook ||
+      !source[this.props.listenerHook] ||
+      typeof source[this.props.listenerHook] !== 'function') {
+     return;
+   }
+
+   let listener = source[this.props.listenerHook](this.onSourceChanged.bind(this, name));
+
+   this.updateData(data => data.setIn(['listeners', name], listener));
  }
 
  componentWillUnmount() {

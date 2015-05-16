@@ -54,6 +54,34 @@ class Component extends React.Component {
     });
   }
 
+  static includeSimpleMixIn(mixin, options = {}) {
+    let names = Object.getOwnPropertyNames(mixin);
+    let {omits, prefix} = options;
+    for(let name in names) {
+      if(omits && name in omits) {
+        continue;
+      }
+      let newName = name;
+      if(name in ['getInitialState', 'getDefaultProps', 'propTypes', 'contextTypes']) {
+        console.warn(`Spec ${name} in mixin is not suppored by ES6 style component ignored.`);
+        continue;
+      }
+
+      if(name in ['componentWillMount', 'componentDidMount', 'componentWillReceiveProps', 'componentWillUpdate', 'componentDidUpdate', 'componentWillUnmount']) {
+        if(prefix) {
+          newName = prefix + name;
+        } else {
+          console.error(`Life cycle hook ${name} is found, but prefix isn't provided, ignored`);
+          continue;
+        }
+      }
+      if(Object.getOwnPropertyDescriptor(this.prototype, newName)) {
+        console.error(`Class member ${newName} has been declared`);
+      }
+      let desciptor = Object.getOwnPropertyDescriptor(mixin, name);
+      Object.defineProperty(this.prototype, newName, desciptor);
+    }
+  }
 }
 
 export default Component;

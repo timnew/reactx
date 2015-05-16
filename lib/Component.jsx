@@ -2,6 +2,7 @@
 
 import React, { PropTypes } from 'react';
 import Immutable from 'immutable';
+import shouldComponentUpdate from 'react-pure-render/function';
 
 class Component extends React.Component {
   constructor(props, data = {}) {
@@ -41,6 +42,15 @@ class Component extends React.Component {
       configurable: true,
       enumerable: false,
       get: function router() { return this.context.router; }
+    });
+  }
+
+  static enablePureRender() {
+    Object.defineProperty(this.prototype, 'shouldComponentUpdate', {
+      configurable: true,
+      enumerable: false,
+      writable: true,
+      value: shouldComponentUpdate
     });
   }
 

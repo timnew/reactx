@@ -26,10 +26,10 @@ class Component extends React.Component {
     }
   }
 
-  createStateLink(field, onChangedCallback) {
+  createStateLink(field, onChangedCallback, withField = false) {
     return {
       value: Array.isArray(field) ? this.data.getIn(field) : this.data.get(field),
-      requestChange: onChangedCallback
+      requestChange: withField ? onChangedCallback.bind(this, field) : onChangedCallback.bind(this)
     };
   }
 }

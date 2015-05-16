@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Immutable from 'immutable';
 
 class Component extends React.Component {
@@ -32,6 +32,18 @@ class Component extends React.Component {
       requestChange: withField ? onChangedCallback.bind(this, field) : onChangedCallback.bind(this)
     };
   }
+
+  static enableReactRouter(propName = 'router') {
+    this.contextTypes = this.contextTypes || {};
+    this.contextTypes.router = PropTypes.func;
+
+    Object.defineProperty(this.prototype, propName, {
+      configurable: true,
+      enumerable: false,
+      get: function router() { return this.context.router; }
+    });
+  }
+
 }
 
 export default Component;

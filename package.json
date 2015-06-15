@@ -1,6 +1,6 @@
 {
   "name": "reactx",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A React.js Extension Library, add missing features form React.js ",
   "main": "reactx.jsx",
   "scripts": {

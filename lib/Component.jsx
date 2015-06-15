@@ -34,6 +34,17 @@ class Component extends React.Component {
     };
   }
 
+  static enableMartyApp(propName = 'app') {
+    this.contextTypes = this.contextTypes || {};
+    this.contextTypes.app = PropTypes.object;
+
+    Object.defineProperty(this.prototype, propName, {
+      configurable: true,
+      enumerable: false,
+      get: function app() { return this.context.app; }
+    });
+  }
+
   static enableReactRouter(propName = 'router') {
     this.contextTypes = this.contextTypes || {};
     this.contextTypes.router = PropTypes.func;
